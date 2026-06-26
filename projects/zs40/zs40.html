@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZS60 | Dev Log</title>
+<link rel="icon" type="image/x-icon" href="..\..\images\dinosaur.webp">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 24px;
+    color:#333;
+    line-height:1.7;
+}
+
+a{
+    color:#0066cc;
+    text-decoration:none;
+}
+
+header{
+    margin-bottom:50px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    color:#666;
+    margin-top:.5rem;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:2.5fr 1fr;
+    gap:60px;
+}
+
+/* ---------- DEV LOG ---------- */
+
+.post{
+    margin-bottom:80px;
+}
+
+.post h2{
+    margin-bottom:20px;
+    border-bottom:2px solid #eee;
+    padding-bottom:8px;
+}
+
+.post p{
+    margin-bottom:20px;
+}
+
+/* ---------- TIMELINE ---------- */
+
+aside{
+    position:sticky;
+    top:40px;
+    align-self:start;
+}
+
+.timeline{
+    border-left:2px solid #ddd;
+    padding-left:20px;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:30px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-27px;
+    top:6px;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+    background:#0066cc;
+}
+
+.timeline small{
+    color:#888;
+}
+
+.timeline h4{
+    margin-top:4px;
+}
+
+@media(max-width:900px){
+
+.layout{
+    grid-template-columns:1fr;
+}
+
+aside{
+    position:static;
+}
+
+article{
+    margin-bottom: 1rem;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<a href="../../index.html">← Back to Home</a>
+
+<header>
+
+<h1>ZS40</h1>
+
+<p>
+Custom wireless mechanical keyboard built from scratch.
+</p>
+
+</header>
+
+<div class="layout">
+
+<main id="devlog"></main>
+
+<aside>
+
+<div id="timeline"></div>
+
+</aside>
+
+
+<script src="../../lib/marked.min.js"></script>
+<script src="script.js"></script>
+</div>
+
+</body>
+</html>
