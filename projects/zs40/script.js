@@ -5,7 +5,8 @@ async function loadLogs() {
 
     const timeline = document.getElementById("timeline");
     const devlog = document.getElementById("devlog");
-
+    
+    logs.reverse();
     for (const log of logs) {
 
         // Timeline entry
@@ -20,8 +21,10 @@ async function loadLogs() {
         const md = await fetch(`logs/${log.file}`);
         const markdown = await md.text();
 
+        
+
         // Convert markdown → HTML
-        const html = marked.parse(markdown);
+        const html = marked.parse(markdown, );
 
         const article = document.createElement("article");
         article.innerHTML = html;

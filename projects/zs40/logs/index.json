@@ -1,12 +1,18 @@
 [
   {
-    "date": "2026-06-27",
-    "title": "Idea Formation",
-    "file": "2026-06-27.md"
+    "date": "2026-07-03",
+    "title": "PCB Design - KiCad Schematics",
+    "file": "PCB Design - KiCad Schematics.md"
   },
   {
     "date": "2026-06-27",
     "title": "Layout + CAD Work",
     "file": "Layout + CAD Work.md"
+  },
+  {
+    "date": "2026-06-27",
+    "title": "Idea Formation",
+    "file": "Idea Formation.md"
   }
+  
 ]

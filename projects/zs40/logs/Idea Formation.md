@@ -20,5 +20,5 @@ as of now, these are the parts that I have decided on:
 **Case**: 3D Printed PLA<br>
 **Battery**: Li Ion 3.7V 500mAh <br>
 <br>
-the next step will deciding the keyboard layout, then designing the case.
+the next step will deciding the keyboard layout (60%, 65%), then designing the case.
 
