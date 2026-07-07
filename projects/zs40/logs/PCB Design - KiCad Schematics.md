@@ -15,4 +15,28 @@ i also wanted to talk about some part choices I made. i'm using the ADP150AUJZ-3
 <br>
 <br>
 
+**2026-07-07**
 
+4 days later, progress slowed quite a bit since I picked up a full time job. despite this, I've finished the schematics for:
+<br>
+<br>
+- USB C Port <br>
+- Battery Charging / Power Management IC <br> 
+- Keyboard matrix <br>
+- SWD pins <br>
+- RST & Boot button <br> 
+- Status LEDS <br>
+- LDO <br>
+<br>
+
+<img src="images\SCHEMATIC1 2026-07-07 114328.png" width="100%" alt="Keyboard Layout">
+
+The most time consuming part was reading through the Battery Charger datasheet, specifically the model MCP73871-2CC. I have little experience with working with and charging Li ion batteries, so i don't want to mess it up and accidentally burn my house down. the IC i chose has dedicated power route management, meaning that it can switch between using the usb power and the battery power, saving the battery life and being more power efficient. 
+
+<br>
+
+If i had more experience with these parts, I probably could've finished the same workload within a couple hours. but then again, this project is essentially me diving into unexplored waters and HOPING it will work. if I had the time and the budget, I would order and test for each feature separately, but i'm a broke college student so i'm gonna order the full prototype pcb with all the features combined and hope I didnt fuck up somewhere. 
+
+<br>
+
+Just in case, there are failsafes I put because I know somewhere in this pcb i will have made an error. i have exposed all of the rest of the pins. I've also added a fuse so as to not burn my components in the event of a wrong routing or a short. i will also add many many test points so as to troubleshoot any potential bugs within the hardware. 
