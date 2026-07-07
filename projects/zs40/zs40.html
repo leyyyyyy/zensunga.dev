@@ -70,15 +70,16 @@ aside{
     top:40px;
     align-self:start;
 }
-
-.timeline{
-    border-left:2px solid #ddd;
+#timeline{
     padding-left:20px;
 }
 
 .timeline-item{
+    display:block;
     position:relative;
     margin-bottom:30px;
+    color:inherit;
+    text-decoration:none;
 }
 
 .timeline-item::before{
@@ -92,13 +93,30 @@ aside{
 
     border-radius:50%;
     background:#0066cc;
+    z-index:1;
 }
 
-.timeline small{
+.timeline-item::after{
+    content:"";
+    position:absolute;
+    left:-22px;
+    top:6px;
+
+    width:2px;
+    height:calc(100% + 30px);
+
+    background:#ddd;
+}
+
+.timeline-item:last-child::after{
+    display:none;
+
+}
+#timeline small{
     color:#888;
 }
 
-.timeline h4{
+#timeline h4{
     margin-top:4px;
 }
 
@@ -108,8 +126,65 @@ aside{
     grid-template-columns:1fr;
 }
 
+main{
+    order:2;
+}
+
 aside{
-    position:static;
+    order:1;
+    
+    
+    
+    background:#fff;
+    padding:16px 0;
+    box-shadow:0 2px 15px rgba(0, 0, 0, 0.119);
+    min-width:0;
+    border-radius: 1rem;
+}
+
+#timeline{
+    display:flex;
+    position:sticky;
+    top:-10px;
+    z-index:-10;
+    flex-direction:row;
+    overflow-x:auto;
+    padding-left:20px;
+    padding-right:24px;
+    padding-top:10px;
+    padding-bottom: 5px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    gap:40px;
+    width:95%;
+    min-width:0;
+}
+
+.timeline-item{
+    flex:0 0 auto;
+    width:160px;
+    margin-bottom:0;
+    padding-top:14px;
+}
+.timeline-title{
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size: 0.8rem;
+}
+
+.timeline-item::before{
+    left:0;
+    top:0;
+}
+
+.timeline-item::after{
+    left:0;
+    top:5px;
+
+    width:calc(100% + 40px);
+    height:2px;
 }
 
 article{
@@ -137,6 +212,7 @@ Custom wireless mechanical keyboard built from scratch.
 
 <div class="layout">
 
+
 <main id="devlog"></main>
 
 <aside>
@@ -144,7 +220,6 @@ Custom wireless mechanical keyboard built from scratch.
 <div id="timeline"></div>
 
 </aside>
-
 
 <script src="../../lib/marked.min.js"></script>
 <script src="script.js"></script>

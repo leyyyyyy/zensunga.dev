@@ -7,30 +7,38 @@ async function loadLogs() {
     const devlog = document.getElementById("devlog");
     
     logs.reverse();
-    for (const log of logs) {
 
-        // Timeline entry
+    logs.forEach(async (log, index) => {
+
+        // Create a URL-friendly id from the title, falling back to index if needed
+        const slug = log.title
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "") || `entry-${index}`;
+
+        // Timeline entry (now a link to the matching post)
         timeline.innerHTML += `
-            <p class="timeline-item">
-                <strong>${log.date}</strong><br>
-                ${log.title}
-            </p>
-        `;
+    <a class="timeline-item" href="#${slug}">
+        <strong>${log.date}</strong><br>
+        <span class="timeline-title">${log.title}</span>
+    </a>
+`;
 
         // Load markdown
         const md = await fetch(`logs/${log.file}`);
         const markdown = await md.text();
 
-        
-
         // Convert markdown → HTML
-        const html = marked.parse(markdown, );
+        const html = marked.parse(markdown);
 
         const article = document.createElement("article");
+        article.id = slug;
         article.innerHTML = html;
 
         devlog.appendChild(article);
-    }
+
+    });
 
 }
 

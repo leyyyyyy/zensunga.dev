@@ -1,6 +1,6 @@
 # Idea Formation
 
-**2026-06-27**
+**2026-06-26**
 
 The biggest problem of my highschool life was my horridly heavy bag that I carried with me everywhere. This bag sucked my soul dry ESPECIALLY since I had a 2 hour commute everyday. Then I thought to myself; "damn, i should reduce the amount of shit in here."
 <br>
