@@ -1,15 +1,14 @@
-async function loadLogs() {
 
+async function loadLogs() {
     const response = await fetch("logs/index.json");
     const logs = await response.json();
 
     const timeline = document.getElementById("timeline");
     const devlog = document.getElementById("devlog");
-    
+
     logs.reverse();
 
-    logs.forEach(async (log, index) => {
-
+    for (const [index, log] of logs.entries()) {
         const slug = log.title
             .toLowerCase()
             .trim()
@@ -30,18 +29,17 @@ async function loadLogs() {
         const article = document.createElement("article");
         article.innerHTML = html;
 
-        // Put the id on the post's title heading, not the whole article
+        // Put the ID on the post's title heading
         const heading = article.querySelector("h1, h2, h3");
+
         if (heading) {
             heading.id = slug;
         } else {
-            article.id = slug; // fallback if markdown has no heading
+            article.id = slug;
         }
 
         devlog.appendChild(article);
-
-    });
-
+    }
 }
 
 loadLogs();

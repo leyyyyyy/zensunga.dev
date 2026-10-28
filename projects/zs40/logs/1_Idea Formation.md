@@ -28,12 +28,22 @@ Hardware:
 - Battery indicator
 - Wireless Connectivity
 - Split Layout
+<br>
+Firmware:<br>
+- Wireless Connectivity<br>
+- Multilayered Keyboard Matrix<br>
+- Macro Buttons<br>
+<br>
+<br>
+I'll also set some constraints:<br>
+- max 2 layer pcb. i want to challenge my pcb designing and routing.<br>
+- should be lightweight, under 500 grams preferably.<br>
+- shouldnt be bigger than the laptop keyboard i have now.<br>
+- have a decent enough rf range to be used comfortably without thinking about it.<br>
+- have a battery life of more than 3 sessions of use, which is 16 hours give or take<br>
+- rule of cool, must be aesthetically pleasing (to me) and not look like shit <br>
 
-Firmware:
-- Wireless Connectivity
-- Multilayered Keyboard Matrix
-- Macro Buttons
-
-
+<br>
+<br>
 the next step will deciding the keyboard layout (60%, 65%), then designing the case.
 

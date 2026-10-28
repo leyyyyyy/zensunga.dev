@@ -20,23 +20,48 @@ date = datetime.now().strftime("%Y-%m-%d")
 filename = f"{title}.md"
 filepath = os.path.join(LOGS_DIR, filename)
 
+# Log #
+lognum = 0
+
 # ---- CREATE MARKDOWN TEMPLATE ----
-md_content = f"""# {title}
 
-**Date:** {date}
+md_content = f"""
 
-## Progress
+<br>
+<br>
 
-Write your update here...
+# {title}
 
-## Notes
+**{date}**
 
-- 
+<br>
+<br>
 
-## Next Steps
 
 - 
 """
+
+# ---- UPDATE INDEX.JSON ----
+if os.path.exists(INDEX_FILE):
+    with open(INDEX_FILE, "r", encoding="utf-8") as f:
+        try:
+            index = json.load(f)
+        except json.JSONDecodeError:
+            index = []
+else:
+    index = []
+
+lognum = len(index) +1
+filename = f"{lognum}_{title}.md"
+filepath = os.path.join(LOGS_DIR, filename)
+
+
+# Add new entry
+index.append({
+    "date": date,
+    "title": title,
+    "file": filename
+})
 
 # Ensure logs folder exists
 os.makedirs(LOGS_DIR, exist_ok=True)
@@ -49,22 +74,7 @@ if not os.path.exists(filepath):
 else:
     print("Log already exists for today, not overwritten.")
 
-# ---- UPDATE INDEX.JSON ----
-if os.path.exists(INDEX_FILE):
-    with open(INDEX_FILE, "r", encoding="utf-8") as f:
-        try:
-            index = json.load(f)
-        except json.JSONDecodeError:
-            index = []
-else:
-    index = []
 
-# Add new entry
-index.append({
-    "date": date,
-    "title": title,
-    "file": filename
-})
 
 # Sort newest first
 index.sort(key=lambda x: x["date"], reverse=True)

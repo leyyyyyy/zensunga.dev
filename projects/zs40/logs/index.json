@@ -1,18 +1,33 @@
 [
+  
   {
-    "date": "2026-07-03 - Present",
+    "date": "2026-10-27",
+    "title": "RF Redesign",
+    "file": "6_RF Redesign.md"
+  },
+  {
+    "date": "2026-08-18",
     "title": "PCB Design - KiCad Schematics",
-    "file": "PCB_Design-KiCad Schematics.md"
+    "file": "5_KiCad Schematics.md"
+  },
+  {
+    "date": "2026-7-25",
+    "title": "Soldering the Left Side",
+    "file": "4_Soldering the Left Side.md"
+  },
+  {
+    "date": "2026-07-12",
+    "title": "Firmware Making - NRF Connect",
+    "file": "3_Firmware Making.md"
   },
   {
     "date": "2026-06-27",
     "title": "Layout + CAD Work",
-    "file": "Layout+CAD Work.md"
+    "file": "2_Layout + CAD Work.md"
   },
   {
     "date": "2026-06-26",
     "title": "Idea Formation",
-    "file": "Idea Formation.md"
+    "file": "1_Idea Formation.md"
   }
-  
 ]
